@@ -9,7 +9,7 @@
         android:id="@+id/splashFragment"
         android:name="developer.kulloveth.com.gadsleaderboard.ui.fragments.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_leaderBoardFragment"
             app:destination="@id/leaderBoardFragment"
@@ -20,7 +20,7 @@
         android:id="@+id/leaderBoardFragment"
         android:name="developer.kulloveth.com.gadsleaderboard.ui.fragments.LeaderBoardFragment"
         android:label="fragment_leader_board"
-        tools:layout="@layout/fragment_leader_board" >
+        tools:layout="@layout/fragment_leader_board">
         <action
             android:id="@+id/action_leaderBoardFragment_to_submissionFragment"
             app:destination="@id/submissionFragment" />
@@ -29,7 +29,7 @@
         android:id="@+id/submissionFragment"
         android:name="developer.kulloveth.com.gadsleaderboard.ui.fragments.SubmissionFragment"
         android:label="fragment_submission"
-        tools:layout="@layout/fragment_submission" >
+        tools:layout="@layout/fragment_submission">
         <action
             android:id="@+id/action_submissionFragment_to_leaderBoardFragment"
             app:destination="@id/leaderBoardFragment" />

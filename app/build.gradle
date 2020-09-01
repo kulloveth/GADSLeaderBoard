@@ -13,7 +13,8 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        buildConfigField 'String', 'LEADER_BOARD_BASE_URL', "\"https://gadsapi.herokuapp.com/\""
+        buildConfigField 'String', 'FORM_BASE_URL', "\"https://docs.google.com/forms/d/e/\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -45,7 +46,12 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-moshi:$moshi_version"
     implementation "com.squareup.moshi:moshi-kotlin:1.9.3"
+    implementation "com.squareup.okhttp3:okhttp:$interceptor_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$interceptor_version"
+
+    // Coroutine
+    // implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:{latest-version}"
+    // implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:{latest-version}"
 
     implementation 'com.google.android.material:material:1.2.0'
 

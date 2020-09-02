@@ -2,6 +2,8 @@ package developer.kulloveth.com.gadsleaderboard.data.model
 
 import com.squareup.moshi.Json
 
+data class LearnerByHourBaseResponse(val learnersByHour:List<LearnerByHour>)
+
 data class LearnerByHour(
     @Json(name = "name")
     val name: String,

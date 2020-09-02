@@ -34,6 +34,6 @@ private fun retrofit(baseUrl:String):Retrofit =
     Retrofit.Builder().addConverterFactory(MoshiConverterFactory.create()).baseUrl(baseUrl)
         .client(provideOkHttpClient()).build()
 
-private fun buildLearningApiService(baseUrl: String)= retrofit(baseUrl).create(ApiService::class.java)
+private fun buildLearningApiService(baseUrl: String):ApiService= retrofit(baseUrl).create(ApiService::class.java)
 
 

@@ -34,6 +34,10 @@ class LeaderBoardFragment : Fragment() {
         leaderViewModel.getLearnersByHours().observe(requireActivity(), Observer {
             Log.d("hours","${it.data?.size}")
         })
+
+        leaderViewModel.getLearnersBySkill().observe(requireActivity(), Observer {
+            Log.d("Skills","${it.data}")
+        })
     }
 
 

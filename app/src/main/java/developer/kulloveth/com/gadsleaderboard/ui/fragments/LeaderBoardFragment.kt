@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import developer.kulloveth.com.gadsleaderboard.R
+import developer.kulloveth.com.gadsleaderboard.data.model.Status
 import developer.kulloveth.com.gadsleaderboard.ui.viewmodel.LearnersViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -32,11 +33,10 @@ class LeaderBoardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         leaderViewModel.getLearnersByHours().observe(requireActivity(), Observer {
-            Log.d("hours","${it.data?.size}")
-        })
-
-        leaderViewModel.getLearnersBySkill().observe(requireActivity(), Observer {
-            Log.d("Skills","${it.data}")
+            when(it.status){
+                Status.ERROR-> Log.e("error","${it.message}")
+                Status.SUCCESS -> Log.d("success","${it.data}")
+            }
         })
     }
 

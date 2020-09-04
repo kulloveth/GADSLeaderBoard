@@ -7,8 +7,8 @@ import androidx.lifecycle.viewModelScope
 import developer.kulloveth.com.gadsleaderboard.data.api.repository.LearnerRepository
 import developer.kulloveth.com.gadsleaderboard.data.model.LearnerByHour
 import developer.kulloveth.com.gadsleaderboard.data.model.LearnerByIqSkill
-import developer.kulloveth.com.gadsleaderboard.data.model.NetworkHelper
-import developer.kulloveth.com.gadsleaderboard.data.model.Resource
+import developer.kulloveth.com.gadsleaderboard.util.NetworkHelper
+import developer.kulloveth.com.gadsleaderboard.util.Resource
 import kotlinx.coroutines.launch
 
 class LearnersViewModel(private val repository: LearnerRepository,private val networkHelper: NetworkHelper):ViewModel() {

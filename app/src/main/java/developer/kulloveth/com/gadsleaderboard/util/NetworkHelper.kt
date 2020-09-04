@@ -1,4 +1,4 @@
-package developer.kulloveth.com.gadsleaderboard.data.model
+package developer.kulloveth.com.gadsleaderboard.util
 
 import android.content.Context
 import android.net.ConnectivityManager

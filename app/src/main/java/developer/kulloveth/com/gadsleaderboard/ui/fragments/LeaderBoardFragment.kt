@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import developer.kulloveth.com.gadsleaderboard.R
-import developer.kulloveth.com.gadsleaderboard.data.model.Status
+import developer.kulloveth.com.gadsleaderboard.util.Status
 import developer.kulloveth.com.gadsleaderboard.ui.viewmodel.LearnersViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

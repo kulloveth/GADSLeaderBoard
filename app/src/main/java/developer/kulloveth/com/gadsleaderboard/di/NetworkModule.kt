@@ -3,7 +3,7 @@ package developer.kulloveth.com.gadsleaderboard.di
 import android.content.Context
 import developer.kulloveth.com.gadsleaderboard.BuildConfig
 import developer.kulloveth.com.gadsleaderboard.data.api.ApiService
-import developer.kulloveth.com.gadsleaderboard.data.model.NetworkHelper
+import developer.kulloveth.com.gadsleaderboard.util.NetworkHelper
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -37,7 +37,8 @@ private fun provideOkHttpClient()=if(BuildConfig.DEBUG){
 }else OkHttpClient
     .Builder().build()
 
-private fun provideNetworkHelper(context: Context)  = NetworkHelper(context)
+private fun provideNetworkHelper(context: Context)  =
+    NetworkHelper(context)
 
 private fun retrofit(baseUrl:String):Retrofit =
     Retrofit.Builder().addConverterFactory(MoshiConverterFactory.create()).baseUrl(baseUrl)

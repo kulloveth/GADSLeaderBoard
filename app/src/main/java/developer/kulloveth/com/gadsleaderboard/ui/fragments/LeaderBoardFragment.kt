@@ -18,6 +18,7 @@ class LeaderBoardFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(
@@ -25,14 +26,19 @@ class LeaderBoardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-
-
         return inflater.inflate(R.layout.fragment_leader_board, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         leaderViewModel.getLearnersByHours().observe(requireActivity(), Observer {
+            when(it.status){
+                Status.ERROR-> Log.e("error","${it.message}")
+                Status.SUCCESS -> Log.d("success","${it.data}")
+            }
+        })
+
+        leaderViewModel.getLearnersBySkill().observe(requireActivity(), Observer {
             when(it.status){
                 Status.ERROR-> Log.e("error","${it.message}")
                 Status.SUCCESS -> Log.d("success","${it.data}")

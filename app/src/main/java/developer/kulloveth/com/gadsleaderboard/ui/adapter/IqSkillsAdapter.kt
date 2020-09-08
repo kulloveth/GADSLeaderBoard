@@ -38,9 +38,7 @@ class IqSkillsAdapter :
                 hour.score,
                 hour.country
             )
-            binding.ivLeader.load(hour.badgeUrl) {
-                transformations(CircleCropTransformation())
-            }
+            binding.ivLeader.load(hour.badgeUrl)
         }
     }
 

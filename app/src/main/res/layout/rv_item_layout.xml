@@ -1,38 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/half_padding"
+    app:cardUseCompatPadding="true">
 
-    <ImageView
-        android:id="@+id/iv_leader"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_launcher_background" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/name_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/standard_padding"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/duration_tv"
-        app:layout_constraintStart_toEndOf="@id/iv_leader"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Loveth Chidi" />
+        <ImageView
+            android:layout_margin="@dimen/half_padding"
+            android:id="@+id/iv_leader"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_launcher_background" />
 
-    <TextView
-        android:id="@+id/duration_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hours_txt"
-        android:layout_marginStart="@dimen/standard_padding"
-        app:layout_constraintBottom_toBottomOf="@id/iv_leader"
-        app:layout_constraintStart_toEndOf="@id/iv_leader"
-        app:layout_constraintTop_toBottomOf="@id/name_tv"
-        tools:text="111 learning hrs" />
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standard_padding"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/iv_leader"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="Loveth Chidi" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/duration_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standard_padding"
+            android:text="@string/hours_txt"
+            app:layout_constraintStart_toEndOf="@id/iv_leader"
+            app:layout_constraintTop_toBottomOf="@id/name_tv"
+            tools:text="111 learning hrs" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

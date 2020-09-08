@@ -41,7 +41,6 @@ class LearningHoursLeaderBoardFragment : Fragment() {
                     val adapter = LearningHoursAdapter()
                     binding?.rv?.adapter = adapter
                     adapter.submitList(it.data)
-
                 }
                 Status.LOADING ->{}
             }

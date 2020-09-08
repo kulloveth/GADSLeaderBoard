@@ -4,4 +4,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="submit">Submit</string>
     <string name="hours_txt">%s learning hours %s </string>
+    <string name="score_txt">%s Skill IQ Score %s </string>
 </resources>

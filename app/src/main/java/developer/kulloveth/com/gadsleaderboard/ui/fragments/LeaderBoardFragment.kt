@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
+import developer.kulloveth.com.gadsleaderboard.R
 import developer.kulloveth.com.gadsleaderboard.databinding.FragmentLeaderBoardBinding
 import developer.kulloveth.com.gadsleaderboard.ui.adapter.PagerAdapter
 
@@ -42,6 +44,10 @@ class LeaderBoardFragment : Fragment() {
         ) { tab, position ->
             tab.text = getTabTitle(position)
         }.attach()
+
+        binding?.submitBtn?.setOnClickListener {
+            requireView().findNavController().navigate(R.id.action_leaderBoardFragment_to_submissionFragment)
+        }
     }
 
     private fun getTabTitle(position: Int): String {

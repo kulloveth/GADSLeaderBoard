@@ -5,4 +5,9 @@
     <string name="submit">Submit</string>
     <string name="hours_txt">%s learning hours %s </string>
     <string name="score_txt">%s Skill IQ Score %s </string>
+    <string name="project_submission">Project Submission</string>
+    <string name="first_name">first Name</string>
+    <string name="last_name">last Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="project_on_github_link">Project on Github(link)</string>
 </resources>

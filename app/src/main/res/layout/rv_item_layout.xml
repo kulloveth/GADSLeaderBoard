@@ -12,10 +12,10 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:layout_margin="@dimen/half_padding"
             android:id="@+id/iv_leader"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_margin="@dimen/half_padding"
             android:scaleType="fitCenter"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -27,9 +27,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/standard_padding"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_leader"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             tools:text="Loveth Chidi" />
 
         <TextView

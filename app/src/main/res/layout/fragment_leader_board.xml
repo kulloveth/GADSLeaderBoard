@@ -22,6 +22,7 @@
             <Button
                 android:layout_width="@dimen/submit_btn_width"
                 android:layout_height="30dp"
+                android:id="@+id/submit_btn"
                 android:layout_gravity="end"
                 android:layout_marginEnd="@dimen/standard_padding"
                 android:background="@drawable/submit_btn_drawable"

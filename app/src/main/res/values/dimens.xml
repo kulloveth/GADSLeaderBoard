@@ -3,4 +3,5 @@
     <dimen name="submit_btn_width">100dp</dimen>
     <dimen name="standard_padding">16dp</dimen>
     <dimen name="half_padding">8dp</dimen>
+    <dimen name="name_width">150dp</dimen>
 </resources>

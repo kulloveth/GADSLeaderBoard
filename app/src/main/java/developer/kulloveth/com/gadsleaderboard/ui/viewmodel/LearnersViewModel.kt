@@ -15,7 +15,8 @@ class LearnersViewModel(private val repository: LearnerRepository,private val ne
 
     private val learnerByHourLivedata = MutableLiveData<Resource<List<LearnerByHour>>>()
     private val learnerByIqSkillsLivedata = MutableLiveData<Resource<List<LearnerByIqSkill>>>()
-
+    private val formLivedata = MutableLiveData<Resource<String>>()
+    val fLivedata = formLivedata
     fun getLearnersByHours():LiveData<Resource<List<LearnerByHour>>>{
         viewModelScope.launch {
            learnerByHourLivedata.postValue(Resource.loading(null))
@@ -41,5 +42,18 @@ class LearnersViewModel(private val repository: LearnerRepository,private val ne
                     learnerByIqSkillsLivedata.postValue(Resource.error(it.errorBody().toString(),null))
                 } }}else learnerByIqSkillsLivedata.postValue(Resource.error("No internet Connection",null)) }
         return learnerByIqSkillsLivedata
+    }
+
+    fun submitForm(email:String,name:String,lName:String,gitLink:String){
+        viewModelScope.launch {
+            repository.submitForm(email,name,lName,gitLink).let {
+                if (it.isSuccessful){
+                    formLivedata.postValue(Resource.success("submitted"))
+                }else{
+                    formLivedata.postValue(Resource.error("error submitting form",null))
+                }
+            }
+        }
+
     }
 }

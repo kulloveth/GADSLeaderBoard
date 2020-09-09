@@ -1,14 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/black"
     tools:context=".ui.fragments.SubmissionFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:navigationIcon="@drawable/ic_baseline_keyboard_backspace_24"
+            app:title="LeaderBoard">
+                        <ImageView
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/toolbar_bg"
+                            android:layout_width="wrap_content"
+                            android:layout_marginEnd="50dp"
+                            android:layout_height="wrap_content"/>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/project_submission"
+        android:textColor="@color/dark_orange"
+        android:textSize="24sp"
+        android:layout_marginTop="@dimen/standard_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBar" />
+    <View
+        app:layout_constraintTop_toBottomOf="@id/title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+
+    <EditText
+        android:id="@+id/first_name_et"
+        android:layout_width="@dimen/name_width"
+        android:layout_height="60dp"
+        android:layout_marginStart="@dimen/standard_padding"
+        app:layout_constraintBottom_toTopOf="@id/email_et"
+        android:background="@drawable/txt_field_bg"
+        android:hint="@string/first_name"
+        android:padding="@dimen/half_padding"
+        app:layout_constraintEnd_toStartOf="@+id/last_name_et"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_tv" />
+
+    <EditText
+        android:id="@+id/last_name_et"
+        android:layout_width="@dimen/name_width"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toTopOf="@id/email_et"
+        android:layout_marginEnd="@dimen/standard_padding"
+        android:background="@drawable/txt_field_bg"
+        android:hint="@string/last_name"
+        android:padding="@dimen/half_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/first_name_et"
+        app:layout_constraintTop_toBottomOf="@id/title_tv" />
+
+    <EditText
+        android:id="@+id/email_et"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="@dimen/standard_padding"
+        android:layout_marginEnd="@dimen/standard_padding"
+        app:layout_constraintBottom_toTopOf="@id/github_et"
+        android:background="@drawable/txt_field_bg"
+        android:hint="@string/email_address"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/half_padding"
+        app:layout_constraintTop_toBottomOf="@id/first_name_et" />
+
+    <EditText
+        android:id="@+id/github_et"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginEnd="@dimen/standard_padding"
+        android:layout_marginStart="@dimen/standard_padding"
+        android:background="@drawable/txt_field_bg"
+        android:hint="@string/project_on_github_link"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/half_padding"
+        app:layout_constraintBottom_toTopOf="@id/submit_btn"
+        app:layout_constraintTop_toBottomOf="@id/email_et" />
+
+    <Button
+        android:layout_width="@dimen/name_width"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:id="@+id/submit_btn"
+        android:background="@drawable/sbt_field_bg"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/standard_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/github_et" />
+</androidx.constraintlayout.widget.ConstraintLayout>

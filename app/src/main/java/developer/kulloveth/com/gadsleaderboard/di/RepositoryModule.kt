@@ -8,7 +8,7 @@ import org.koin.dsl.module
 
 val repositoryModule= module {
     single<ApiHelper> {
-        return@single ApiHelperImpl(get())
+        return@single ApiHelperImpl(get(),get())
     }
     single {
         LearnerRepository(get())

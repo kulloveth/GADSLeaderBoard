@@ -11,24 +11,25 @@ GADs Practice Project to show learners leaderboard
 * LiveData
 
 # ScreenShots
+
 <table>
 <tr>
 <td>
 
- <img src =  "screenshots/lead_hour_pg.png"/>
+![SPLASH](https://github.com/kulloveth/GADSLeaderBoard/blob/master/app/screenshots/splash_pg.png)
+</td>
+<td>
 
+![Skilled](https://github.com/kulloveth/GADSLeaderBoard/blob/master/app/screenshots/lead_skil_pg.png)
+
+</td>
+<td>
+ 
+![Hours Learnt](https://github.com/kulloveth/GADSLeaderBoard/blob/master/app/screenshots/lead_hour_pg.png)
  </td>
  <td>
-
- ![Skilled]("screenshots/lead_skil_pg.png")
-
- </td>
-
-   <td>
-<img src = "screenshots/sbt_page.png" />
-  </td>
-  <td>
-  <img src = "screenshots/splash_pg.png"/>
+ 
+![Form](https://github.com/kulloveth/GADSLeaderBoard/blob/master/app/screenshots/sbt_page.png)
 </td>
-    </tr>
+ </tr>
 </table>

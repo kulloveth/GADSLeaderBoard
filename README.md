@@ -8,4 +8,27 @@ GADs Practice Project to show learners leaderboard
 * Coroutine - For Asyncronous data processing
 * Koin - For Dependency Injection
 * ViewModel
-* LiveData 
+* LiveData
+
+# ScreenShots
+<table>
+<tr>
+<td>
+
+ <img src =  "screenshots/lead_hour_pg.png"/>
+
+ </td>
+ <td>
+
+ <img src ="screenshots/lead_skil_pg.png"/>
+
+ </td>
+
+   <td>
+<img src = "screenshots/sbt_page.png" />
+  </td>
+  <td>
+  <img src = "screenshots/splash_pg.png"/>
+</td>
+    </tr>
+</table>

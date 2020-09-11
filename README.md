@@ -20,7 +20,7 @@ GADs Practice Project to show learners leaderboard
  </td>
  <td>
 
- <img src ="screenshots/lead_skil_pg.png"/>
+ ![Skilled]("screenshots/lead_skil_pg.png")
 
  </td>
 

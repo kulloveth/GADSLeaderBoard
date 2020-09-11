@@ -39,11 +39,14 @@ class SkillIqLeaderBoardFragment : Fragment() {
             when (it.status) {
                 Status.ERROR -> Log.e("error", "${it.message}")
                 Status.SUCCESS -> {
+                    binding?.lottyIcon?.visibility = View.GONE
                     val adapter = IqSkillsAdapter()
                     binding?.rv?.adapter = adapter
                     adapter.submitList(it.data)
                 }
-                Status.LOADING ->{}
+                Status.LOADING ->{
+                    binding?.lottyIcon?.visibility = View.VISIBLE
+                }
             }
         })
     }

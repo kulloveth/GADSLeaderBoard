@@ -36,13 +36,17 @@ class LearningHoursLeaderBoardFragment : Fragment() {
     private fun displayLearnersByHours(){
         leaderViewModel.getLearnersByHours().observe(requireActivity(), Observer {
             when (it.status) {
-                Status.ERROR -> Log.e("error", "${it.message}")
+                Status.ERROR -> {Log.e("error", "${it.message}")
+                }
                 Status.SUCCESS -> {
+                    binding?.lottyIcon?.visibility = View.GONE
                     val adapter = LearningHoursAdapter()
                     binding?.rv?.adapter = adapter
                     adapter.submitList(it.data)
                 }
-                Status.LOADING ->{}
+                Status.LOADING ->{
+                    binding?.lottyIcon?.visibility = View.VISIBLE
+                }
             }
         })
     }

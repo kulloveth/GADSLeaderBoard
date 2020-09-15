@@ -71,7 +71,13 @@ class SubmissionFragment : Fragment() {
             when (it.status) {
 
                 Status.SUCCESS -> {
-                    Toast.makeText(requireContext(), it.data, Toast.LENGTH_LONG).show()
+                    alertDialog.dismiss()
+                    val sBuilder = AlertDialog.Builder(requireActivity())
+                    val sInflater = LayoutInflater.from(requireActivity())
+                    val sView = sInflater.inflate(R.layout.success_layout, null)
+                    sBuilder.setView(sView)
+                    val successDialog = sBuilder.create()
+                    successDialog.show()
                 }
                 Status.ERROR -> {
                     alertDialog.dismiss()

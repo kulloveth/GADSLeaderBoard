@@ -46,6 +46,7 @@ class LearnersViewModel(private val repository: LearnerRepository,private val ne
 
     fun submitForm(email:String,name:String,lName:String,gitLink:String){
         viewModelScope.launch {
+            formLivedata.postValue(Resource.loading(null))
             repository.submitForm(email,name,lName,gitLink).let {
                 if (it.isSuccessful){
                     formLivedata.postValue(Resource.success("submitted"))

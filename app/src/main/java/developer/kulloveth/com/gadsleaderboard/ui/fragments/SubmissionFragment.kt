@@ -78,6 +78,10 @@ class SubmissionFragment : Fragment() {
                     sBuilder.setView(sView)
                     val successDialog = sBuilder.create()
                     successDialog.show()
+                    sView.findViewById<LottieAnimationView>(R.id.lotty_icon).apply {
+                        setAnimation("success.json")
+                        playAnimation()
+                    }
                 }
                 Status.ERROR -> {
                     alertDialog.dismiss()

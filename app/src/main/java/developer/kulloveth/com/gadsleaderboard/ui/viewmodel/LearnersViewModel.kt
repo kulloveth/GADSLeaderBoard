@@ -45,6 +45,7 @@ class LearnersViewModel(private val repository: LearnerRepository,private val ne
     }
 
     fun submitForm(email:String,name:String,lName:String,gitLink:String){
+        if (networkHelper.isNetworkConnected()){
         viewModelScope.launch {
             formLivedata.postValue(Resource.loading(null))
             repository.submitForm(email,name,lName,gitLink).let {
@@ -53,8 +54,7 @@ class LearnersViewModel(private val repository: LearnerRepository,private val ne
                 }else{
                     formLivedata.postValue(Resource.error("error submitting form",null))
                 }
-            }
-        }
+            } }}else formLivedata.postValue(Resource.error("No internet Connection",null))
 
     }
 }

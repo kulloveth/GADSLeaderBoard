@@ -12,8 +12,7 @@
         android:layout_gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/submitted_tv"
         app:layout_constraintTop_toTopOf="parent"
-        app:lottie_fileName="success.json"
-        app:lottie_loop="true" />
+        app:lottie_fileName="success.json" />
 
     <TextView
         android:id="@+id/submitted_tv"

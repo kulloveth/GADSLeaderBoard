@@ -5,16 +5,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import com.airbnb.lottie.LottieAnimationView
 import developer.kulloveth.com.gadsleaderboard.R
 import developer.kulloveth.com.gadsleaderboard.databinding.FragmentSubmissionBinding
 import developer.kulloveth.com.gadsleaderboard.ui.viewmodel.LearnersViewModel
 import developer.kulloveth.com.gadsleaderboard.util.Status
+import kotlinx.android.synthetic.main.fragment_submission.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -47,9 +49,6 @@ class SubmissionFragment : Fragment() {
         builder.setCancelable(false)
         val alertDialog = builder.create()
         alertDialog.show()
-        val metrics = resources.displayMetrics
-        val width = metrics.widthPixels
-        val height = metrics.heightPixels
         view.findViewById<ImageView>(R.id.cancel).setOnClickListener {
             alertDialog.dismiss()
         }
@@ -75,7 +74,19 @@ class SubmissionFragment : Fragment() {
                     Toast.makeText(requireContext(), it.data, Toast.LENGTH_LONG).show()
                 }
                 Status.ERROR -> {
-                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()
+                    alertDialog.dismiss()
+                    val eBuilder = AlertDialog.Builder(requireActivity())
+                    val eInflater = LayoutInflater.from(requireActivity())
+                    val eView = eInflater.inflate(R.layout.success_layout, null)
+                    eBuilder.setView(eView)
+                    val errorDialog = eBuilder.create()
+                    errorDialog.show()
+                    eView.findViewById<LottieAnimationView>(R.id.lotty_icon).apply {
+                        setAnimation("error.json")
+                        playAnimation()
+                    }
+                    eView.findViewById<TextView>(R.id.submitted_tv).text =
+                        "Submission not SuccessFul"
                 }
 
                 Status.LOADING -> {
